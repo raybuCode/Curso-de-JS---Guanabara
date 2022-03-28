@@ -4,9 +4,26 @@
     <meta charset="pt-BR">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nacionalidade</title>
+    <title>Consulta Nacionalidade</title>
 </head>
 <body>
+    <h1>Verificação de Nacionalidade</h1>
+    Qual seu país de origem? <input type="text" name="paisn" id="paisn">
+    <input type="button" value="consultar" onclick="consultar()">
+    <div id="res">
+    </div>
     
+    <script>
+        function consultar(){
+            var txtnac = window.document.getElementById(paisn)
+            var res = window.document.querySelector('div#res')
+            res.innerHTML=`<p>Seu pais de nascimento é <strong>${txtnac}</strong><p>`
+                if (txtnac != 'Brasil'){
+                    res.innerHTML += '<p>Voce é um Estrangeiro</p>'
+                } else{
+                    res.innerHTML += '<p>Voce é um Brasileiro</p>'
+                }    
+        }
+    </script>
 </body>
 </html>
