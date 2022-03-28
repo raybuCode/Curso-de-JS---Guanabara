@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Nacionalidade</title>
+    <style>
+        body{
+            background: grey;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema de Consulta de Nacionalidade</h1>
+
+    Informe o seu pais de origem <input type="text" name="paisnacionalidade" id="paisnacionalidade">
+    <input type="button" value="consultar" onclick="consultar()">
+    <div id="res"></div>
+
+    <script>
+        function consultar(){
+            var txtpais = window.document.querySelector('input#paisnacionalidade').value
+            var res = window.document.querySelector('div#res')
+            res.innerHTML = `<p>O seu País informado é ${txtpais}</p>`
+
+            if (txtpais != 'Brasil'){
+                res.innerHTML += 'Voce é estrangeiro'
+            } else {
+                res.innerHTML += 'Voce é brasileiro'
+            }
+        }
+    </script>
+</body>
+</html>
